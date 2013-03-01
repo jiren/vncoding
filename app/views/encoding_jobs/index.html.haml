@@ -1,0 +1,23 @@
+%h1 Listing encoding_jobs
+
+%table
+  %tr
+    %th S3 url
+    %th Status
+    %th File
+    %th
+    %th
+    %th
+
+  - @encoding_jobs.each do |encoding_job|
+    %tr
+      %td= encoding_job.s3_url
+      %td= encoding_job.status
+      %td= encoding_job.file
+      %td= link_to 'Show', encoding_job
+      %td= link_to 'Edit', edit_encoding_job_path(encoding_job)
+      %td= link_to 'Destroy', encoding_job, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Encoding job', new_encoding_job_path
