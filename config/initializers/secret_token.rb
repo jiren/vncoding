@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-Vncoding::Application.config.secret_token = '1111bc2d1f3abc6cd63326628069046aa6c5c1ff1e4b1cc6648ffa2f194ec4e813524b7b19fd5c486976b8414cf2f6069be0af52cf83422fa0b5ad4f1cb1158f'
+Vncoding::Application.config.secret_token = '8897a268bf6ba707502da9007a876077b74761197be72219b5e7ada052ccfd4ffa6184ac92dcc35f3881ed37474451aa8f76f771031454be423014ba2f951993'
