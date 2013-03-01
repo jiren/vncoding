@@ -1,0 +1,19 @@
+= form_for @encoding_job do |f|
+  - if @encoding_job.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@encoding_job.errors.count, "error")} prohibited this encoding_job from being saved:"
+      %ul
+        - @encoding_job.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :s3_url
+    = f.text_field :s3_url
+  .field
+    = f.label :status
+    = f.text_field :status
+  .field
+    = f.label :file
+    = f.text_field :file
+  .actions
+    = f.submit 'Save'
