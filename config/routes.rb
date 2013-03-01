@@ -1,5 +1,11 @@
+require 'sidekiq/web'
+
 Vncoding::Application.routes.draw do
   resources :encoding_jobs
+
+  mount Sidekiq::Web => '/sidekiq'
+
+  root :to => 'encoding_jobs#new'
 
 
   # The priority is based upon order of creation:
@@ -51,7 +57,6 @@ Vncoding::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
 
   # See how all your routes lay out with "rake routes"
 

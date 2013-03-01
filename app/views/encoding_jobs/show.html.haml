@@ -1,15 +1,3 @@
 %p#notice= notice
 
-%p
-  %b S3 url:
-  = @encoding_job.s3_url
-%p
-  %b Status:
-  = @encoding_job.status
-%p
-  %b File:
-  = @encoding_job.file
-
 = link_to 'Edit', edit_encoding_job_path(@encoding_job)
-\|
-= link_to 'Back', encoding_jobs_path

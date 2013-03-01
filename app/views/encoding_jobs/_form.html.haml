@@ -7,13 +7,13 @@
           %li= msg
 
   .field
-    = f.label :s3_url
-    = f.text_field :s3_url
+    = f.label :video
+    = f.file_field :video
   .field
-    = f.label :status
-    = f.text_field :status
+    = f.label :format
+    = f.text_field :format
   .field
-    = f.label :file
-    = f.text_field :file
+    = f.label :request_id
+    = f.text_field :request_id
   .actions
     = f.submit 'Save'
