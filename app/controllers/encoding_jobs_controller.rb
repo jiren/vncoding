@@ -82,4 +82,9 @@ class EncodingJobsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def status
+    @encoding_job = EncodingJob.find(params[:id])
+  end
+
 end

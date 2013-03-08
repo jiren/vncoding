@@ -59,3 +59,4 @@ gem 'sinatra', '>= 1.3.0', :require => nil
 gem 'kiqstand'
 gem 'paperclip'
 gem "mongoid-paperclip", :require => "mongoid_paperclip"
+gem 'fog'

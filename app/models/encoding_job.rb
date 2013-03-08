@@ -9,7 +9,6 @@ class EncodingJob
     'error'     => 3
   }
 
-  field :request_id
   field :state, type: Integer, :default => 0
   field :callback_url
   field :video_url
