@@ -1,4 +1,5 @@
 class EncodingJobsController < ApplicationController
+  before_filter :authenticate_user!
   # GET /encoding_jobs
   # GET /encoding_jobs.json
   def index
@@ -25,9 +26,10 @@ class EncodingJobsController < ApplicationController
   # GET /encoding_jobs/new.json
   def new
     @encoding_job = EncodingJob.new
-
+    
     respond_to do |format|
-      format.html # new.html.erb
+      format.html {}
+      #format.html { render text: 'abbb', layout: false}
       format.json { render json: @encoding_job }
     end
   end

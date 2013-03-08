@@ -6,8 +6,12 @@
 
   - @encoding_jobs.each do |encoding_job|
     %tr
-      %td= jw_player(encoding_job.video.url, :width => 400, :height => 400)
-      %td= encoding_job.video_file_name
+      //%td=# jw_player(encoding_job.encoded_video_path, { :width => 400, :height => 400, :screnshot => encoding_job.image_path})
+      %td= jw_player(encoding_job.video.url, { :width => 400, :height => 400, :screnshot => encoding_job.image_path})
+      %td= encoding_job.encoded_video_path
 %br
-
+%p
+  S3 test
+= jw_player('https://s3.amazonaws.com/other_testing/video.mp4', :width => 400, :height => 400)
+= jw_player('https://s3.amazonaws.com/other_testing/ccd0d8bc2f6f667004c4124340a26922.mp4', :width => 400, :height => 400)
 = link_to 'New Encoding job', new_encoding_job_path

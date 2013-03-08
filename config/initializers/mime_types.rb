@@ -6,4 +6,5 @@
 
 Mime::Type.register "video/mp4", :m4v
 Mime::Type.register "video/x-flvmp4", :flv
+Mime::Type.register "video/x-ms-wmv", :wmv 
 MIME::Types.add(MIME::Type.from_array("video/mp4", %(m4v)))

@@ -1,12 +1,13 @@
 require 'sidekiq/web'
 
 Vncoding::Application.routes.draw do
+  devise_for :users, :controllers => {:sessions => "sessions"} do
+    match '/' => 'sessions#new'
+  end
+
   resources :encoding_jobs
 
   mount Sidekiq::Web => '/sidekiq'
-
-  root :to => 'encoding_jobs#new'
-
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,0 +1,27 @@
+!!!
+%html{:lang => "en"}
+  %head
+    %meta{:charset => "utf-8"}
+    %title
+      Encoder
+    =stylesheet_link_tag    "application", :media => "all"
+    =javascript_include_tag "application"
+    =csrf_meta_tags
+  %body{:style => "padding-top:60px;"}
+    .navbar.navbar-inverse.navbar-fixed-top
+      #navbar-inner.navbar-inner
+        .container
+          %a.brand{:href => "/"}
+            Video Encoder
+          .pull-right
+            %ul.nav
+              -if user_signed_in?   
+                %li
+                  = link_to current_user.email, edit_user_registration_path(current_user) 
+                %li  
+                  = link_to "Logout", destroy_user_session_path, :method => :delete
+              -else
+                %li
+                  = link_to "Login", new_user_session_path
+    .container          
+      =yield
