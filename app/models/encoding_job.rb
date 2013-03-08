@@ -18,7 +18,7 @@ class EncodingJob
 
   has_mongoid_attached_file :video
 
-  OUT_DIR = '/Users/jiren/github/vncoding/public/system'
+  OUT_DIR = '/home/rishi/work/vncoding/public/system'
 
   after_create {|doc| EncodingWorker.perform_async(doc.id.to_s) }
 
